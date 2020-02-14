@@ -1,10 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const kegText = {
+  postion: 'relative',
+  backgroundColor: '#36752d',
+  fontSize: '30px',
+  padding: '20px',
+  marginTop: '30px',
+  textAlign: 'left'
+}
+
+const kegTitle = {
+  fontSize: '50px',
+  fontVariant: 'small-caps'
+}
+
 function Keg(props) {
   return(
-    <div>
-      <p>{props.brand} {props.name}</p>
+    <div style={kegText}>
+      <p style={kegTitle}>{props.brand} {props.name}</p>
       <p>Price: {props.price}</p>
       <p>Alcohol Content: {props.alcoholContent}</p>
     </div>

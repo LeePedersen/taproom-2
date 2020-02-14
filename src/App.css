@@ -1,17 +1,35 @@
 .App {
   text-align: center;
+  text-shadow: 1px 1px 2px black, 0 0 0.5em grey, 0 0 0.2em darkgrey;
+  color: white;
+  background-color: #d2ffc7;
 }
 
 .ginger-img {
   max-width: 70%;
-  max-height: 70%;
+  max-height: 100%;
   display: inline;
-  /* position: absolute; */
+  position: absolute;
+  margin-top: 50px;
 }
 
 .kegs {
-  height: 70vh;
+  height: 50vh;
   width: 70vw;
   text-align: center;
-  background-color: lightgreen;
+  background-color: #47db30;
+  margin: auto;
+  padding-bottom: 50px;
+  text-shadow: 1px 1px 2px black, 0 0 0.5em grey, 0 0 0.2em darkgrey;
+  color: white;
+  position: relative;
+}
+
+h1 {
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 60px;
+  background-color: #36752d;
+  margin: 0px;
+  padding: 40px;
 }
