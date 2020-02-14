@@ -3,7 +3,7 @@
   text-shadow: 1px 1px 2px black, 0 0 0.5em grey, 0 0 0.2em darkgrey;
   color: white;
   background-color: #d2ffc7;
-  height: 100vh;
+  min-height: 100%;
 }
 
 .ginger-img {
@@ -22,6 +22,8 @@
   margin: auto;
   padding-bottom: 50px;
   position: relative;
+  border-bottom: solid 20px #47db30;
+  border-left: solid 20px #47db30;
 }
 
 h1 {
@@ -31,8 +33,20 @@ h1 {
   background-color: #36752d;
   margin: 0px;
   padding: 40px;
+  border-bottom: solid 20px #47db30;
 }
 
 .header {
   text-shadow: none;
+  position: fixed;
+  background-color: black;
+  width: 100%;
+  z-index: 2;
+  padding: 10px;
+}
+
+a {
+ color: white;
+ margin: 10px;
+ padding: 10px;
 }
