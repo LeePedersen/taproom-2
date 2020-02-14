@@ -49,15 +49,15 @@ const allKegs = [
 
 function Kegs() {
   return (
-    <div className="kegs">
+    <div>
     {allKegs.map((keg, index) =>
-      <div>
-      <img className="ginger-img" src={ginger} alt="a piece of ginger"></img>
-      <Keg name={keg.name}
-      brand ={keg.brand}
-      price ={keg.price}
-      alcoholContent ={keg.alcoholContent}
-      key={index}/>
+      <div className="kegs">
+        <img className="ginger-img" src={ginger} alt="a piece of ginger"></img>
+        <Keg name={keg.name}
+        brand ={keg.brand}
+        price ={keg.price}
+        alcoholContent ={keg.alcoholContent}
+        key={index}/>
       </div>
     )};
     </div>

@@ -3,9 +3,15 @@
 }
 
 .ginger-img {
-  width: 40vw;
+  max-width: 70%;
+  max-height: 70%;
+  display: inline;
+  /* position: absolute; */
 }
 
 .kegs {
-  width: 50vw;
+  height: 70vh;
+  width: 70vw;
+  text-align: center;
+  background-color: lightgreen;
 }
