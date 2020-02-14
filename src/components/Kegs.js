@@ -8,42 +8,48 @@ const allKegs = [
     brand: "Reed's",
     price: "$5.00",
     alcoholContent: "0%",
-    image: ginger
+    image: ginger,
+    pintsLeft: "124"
   },
   {
     name: "Ginger beer",
     brand: "Reed's",
     price: "$5.00",
     alcoholContent: "0%",
-    image: ginger
+    image: ginger,
+    pintsLeft: "124"
   },
   {
     name: "Ginger beer",
     brand: "Reed's",
     price: "$5.00",
     alcoholContent: "0%",
-    image: ginger
+    image: ginger,
+    pintsLeft: "124"
   },
   {
     name: "Ginger beer",
     brand: "Reed's",
     price: "$5.00",
     alcoholContent: "0%",
-    image: ginger
+    image: ginger,
+    pintsLeft: "124"
   },
   {
     name: "Ginger beer",
     brand: "Reed's",
     price: "$5.00",
     alcoholContent: "0%",
-    image: ginger
+    image: ginger,
+    pintsLeft: "124"
   },
   {
     name: "Ginger beer",
     brand: "Reed's",
     price: "$5.00",
     alcoholContent: "0%",
-    image: ginger
+    image: ginger,
+    pintsLeft: "124"
   }
 ]
 
@@ -57,6 +63,7 @@ function Kegs() {
         brand ={keg.brand}
         price ={keg.price}
         alcoholContent ={keg.alcoholContent}
+        pintsLeft ={keg.pintsLeft}
         key={index}/>
       </div>
     )};
