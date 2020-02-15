@@ -9,7 +9,7 @@ This site tracks kegs for a taproom.
 
 ## Component Structure
 
-<img src="src/img/ginger.png">
+<img src="src/img/componentStructure.jpeg">
 
 ## Setup/Installation instructions:
 * Click the `Clone or download` button and copy the link.
