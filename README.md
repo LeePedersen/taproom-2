@@ -1,11 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # **Taproom**
 
 ##### By Lee Pedersen
 
 ## Description:
 This site tracks kegs for a taproom.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Component Structure
 

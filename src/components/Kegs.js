@@ -66,9 +66,9 @@ function Kegs() {
         pintsLeft ={keg.pintsLeft}
         key={index}/>
       </div>
-    )};
+    )}
     </div>
-  );
+  )
 }
 
 export default Kegs;
