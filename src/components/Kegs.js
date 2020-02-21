@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Keg from './Keg';
 import ginger from '../img/ginger.png';
 
@@ -18,6 +19,10 @@ function Kegs(props) {
     )}
     </div>
   )
+}
+
+Kegs.propTypes = {
+  allKegs: PropTypes.array
 }
 
 export default Kegs;
