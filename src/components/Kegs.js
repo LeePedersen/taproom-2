@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Keg from './Keg';
 import ginger from '../img/ginger.png';
+import { v4 } from 'uuid';
 
 function Kegs(props) {
   return (
@@ -14,7 +15,7 @@ function Kegs(props) {
         price ={keg.price}
         alcoholContent ={keg.alcoholContent}
         pintsLeft ={keg.pintsLeft}
-        key={index}/>
+        key={keg.id}/>
       </div>
     )}
     </div>

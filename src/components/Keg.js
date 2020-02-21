@@ -19,8 +19,8 @@ function Keg(props) {
   return(
     <div style={kegText}>
       <p style={kegTitle}>{props.brand} {props.name}</p>
-      <p>Price: {props.price}</p>
-      <p>Alcohol Content: {props.alcoholContent}</p>
+      <p>Price: ${props.price}</p>
+      <p>Alcohol Content: {props.alcoholContent}%</p>
       <p>Pints Left: {props.pintsLeft}</p>
     </div>
   )
