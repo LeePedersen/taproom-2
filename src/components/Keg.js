@@ -10,20 +10,41 @@ const kegText = {
   textAlign: 'left'
 }
 
+const kegTextEmpty = {
+  postion: 'relative',
+  backgroundColor: '#36752d',
+  fontSize: '30px',
+  padding: '20px',
+  marginTop: '30px',
+  textAlign: 'left',
+  color: 'grey',
+}
+
 const kegTitle = {
   fontSize: '50px',
   fontVariant: 'small-caps'
 }
 
 function Keg(props) {
-  return(
-    <div style={kegText}>
-      <p style={kegTitle}>{props.brand} {props.name}</p>
-      <p>Price: ${props.price}</p>
-      <p>Alcohol Content: {props.alcoholContent}%</p>
-      <p>Pints Left: {props.pintsLeft}</p>
-    </div>
-  )
+  if (props.pintsLeft === 0) {
+    return (
+      <div style={kegTextEmpty}>
+        <p style={kegTitle}>{props.brand} {props.name}</p>
+        <p>Price: ${props.price}</p>
+        <p>Alcohol Content: {props.alcoholContent}%</p>
+        <p><em>This keg is empty!</em></p>
+      </div>
+    )
+  } else {
+    return (
+      <div style={kegText}>
+        <p style={kegTitle}>{props.brand} {props.name}</p>
+        <p>Price: ${props.price}</p>
+        <p>Alcohol Content: {props.alcoholContent}%</p>
+        <p>Pints Left: {props.pintsLeft}</p>
+      </div>
+    )
+  }
 }
 
 Keg.propTypes = {
