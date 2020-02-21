@@ -6,6 +6,13 @@ import Header from './components/Header';
 import { Switch, Route } from 'react-router-dom';
 import Error404 from './components/Error404';
 import Admin from './components/Admin';
+import Login from './components/user/Login';
+import Protected from './components/user/Protected';
+import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
+
+function onAuthRequired({history}) {
+  history.push('/login');
+}
 
 class App extends React.Component {
 
@@ -33,16 +40,20 @@ class App extends React.Component {
   }
 
   render() {
-    
+
     return (
       <div className='App'>
         <Header/>
         <h1>Taproom</h1>
         <Switch>
-          <Route exact path='/' render={(props)=><Kegs allKegs={this.state.masterKegList} onDecreasePints={this.handleDecreasePints} currentRouterPath={props.location.pathname} />} />
-          <Route path='/employees' render={(props)=><Admin onDecreasePints={this.handleDecreasePints} allKegs={this.state.masterKegList} currentRouterPath={props.location.pathname} />} />
-          <Route path='/newkeg' render={()=><NewKeg onNewKeg={this.handleNewKeg} />} />
-          <Route component={Error404} />
+
+          <Security issuer='https://${yourOktaDomain}/oauth2/default' clientId='{clientId}' redirectUri={window.location.origin + '/implicit/callback'} onAuthRequired={onAuthRequired} pkce={true} >
+
+            <Route exact path='/' render={(props)=><Kegs allKegs={this.state.masterKegList} onDecreasePints={this.handleDecreasePints} currentRouterPath={props.location.pathname} />} />
+            <Route path='/employees' render={(props)=><Admin onDecreasePints={this.handleDecreasePints} allKegs={this.state.masterKegList} currentRouterPath={props.location.pathname} />} />
+            <Route path='/newkeg' render={()=><NewKeg onNewKeg={this.handleNewKeg} />} />
+            <Route component={Error404} />
+          </Security>
         </Switch>
       </div>
     );

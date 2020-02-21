@@ -24,9 +24,7 @@ class LoginForm extends React.Component {
     this.oktaAuth.signIn({
       username: this.state.username,
       password: this.state.password
-    });
-    .then(res => this.setState({sessionToken: res.sessionToken}));
-    .catch(err => console.log('error: ', err));
+    }).then(res => this.setState({sessionToken: res.sessionToken})).catch(err => console.log('error: ', err));
   }
 
   handleUsernameChange(event) {
@@ -39,7 +37,7 @@ class LoginForm extends React.Component {
 
   render() {
     if (this.state.sessionToken) {
-      this.props.auth.redirect({sessionToken: sessionToken: this.state.sessionToken});
+      this.props.auth.redirect({sessionToken: this.state.sessionToken});
       return null;
     } // else
 
