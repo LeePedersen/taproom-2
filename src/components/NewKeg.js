@@ -1,6 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function NewKeg(){
+function NewKeg(props) {
+  let _name = null;
+  let _name = null;
+  let _name = null;
+  let _name = null;
+
   return (
     <div>
       <form>
