@@ -24,10 +24,10 @@ class App extends React.Component {
   }
 
   handleDecreasePints(kegId) {
-    console.log("reached function");
     let newKegList = this.state.masterKegList.slice();
-    let newKeg = newKegList.filter(keg => keg.id === kegId)
+    let newKeg = newKegList.filter(keg => keg.id === kegId);
     let newPints = newKeg[0].pintsLeft - 1;
+    newKeg[0].pintsLeft = newPints;
     this.setState({masterKegList: newKegList});
   }
 
