@@ -14,11 +14,20 @@ class App extends React.Component {
       masterKegList: []
     };
     this.handleNewKeg = this.handleNewKeg.bind(this);
+    this.handleDecreasePints = this.handleDecreasePints.bind(this);
   }
 
   handleNewKeg(newKeg) {
     let newKegList = this.state.masterKegList.slice();
     newKegList.push(newKeg);
+    this.setState({masterKegList: newKegList});
+  }
+
+  handleDecreasePints(kegId) {
+    console.log("reached function");
+    let newKegList = this.state.masterKegList.slice();
+    let newKeg = newKegList.filter(keg => keg.id === kegId)
+    let newPints = newKeg[0].pintsLeft - 1;
     this.setState({masterKegList: newKegList});
   }
 
@@ -28,7 +37,7 @@ class App extends React.Component {
         <Header/>
         <h1>Taproom</h1>
         <Switch>
-          <Route exact path='/' render={()=><Kegs allKegs={this.state.masterKegList} />} />
+          <Route exact path='/' render={()=><Kegs allKegs={this.state.masterKegList} onDecreasePints={this.handleDecreasePints} />} />
           <Route path='/newkeg' render={()=><NewKeg onNewKeg={this.handleNewKeg} />} />
           <Route component={Error404} />
         </Switch>

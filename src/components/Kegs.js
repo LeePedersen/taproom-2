@@ -7,15 +7,17 @@ import { v4 } from 'uuid';
 function Kegs(props) {
   return (
     <div>
-    {props.allKegs.map((keg, index) =>
+    {props.allKegs.map((keg) =>
       <div className="kegs">
         <img className="ginger-img" src={ginger} alt="a piece of ginger"></img>
         <Keg name={keg.name}
-        brand ={keg.brand}
-        price ={keg.price}
-        alcoholContent ={keg.alcoholContent}
-        pintsLeft ={keg.pintsLeft}
-        key={keg.id}/>
+          brand={keg.brand}
+          price={keg.price}
+          alcoholContent={keg.alcoholContent}
+          pintsLeft={keg.pintsLeft}
+          onDecreasePints={props.onDecreasePints}
+          id={keg.id}
+          key={keg.id}/>
       </div>
     )}
     </div>
@@ -23,7 +25,8 @@ function Kegs(props) {
 }
 
 Kegs.propTypes = {
-  allKegs: PropTypes.array
+  allKegs: PropTypes.array,
+  onDecreasePints: PropTypes.func.isRequired
 }
 
 export default Kegs;

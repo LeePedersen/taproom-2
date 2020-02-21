@@ -42,6 +42,7 @@ function Keg(props) {
         <p>Price: ${props.price}</p>
         <p>Alcohol Content: {props.alcoholContent}%</p>
         <p>Pints Left: {props.pintsLeft}</p>
+        <button onClick={()=>props.onDecreasePints(props.id)}>Decrease by 1 pint</button>
       </div>
     )
   }
@@ -52,7 +53,9 @@ Keg.propTypes = {
   brand: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   alcoholContent: PropTypes.number.isRequired,
-  pintsLeft: PropTypes.number.isRequired
+  pintsLeft: PropTypes.number.isRequired,
+  onDecreasePints: PropTypes.func,
+  id: PropTypes.string.isRequired
 };
 
 export default Keg;
