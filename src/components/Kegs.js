@@ -16,6 +16,7 @@ function Kegs(props) {
           alcoholContent={keg.alcoholContent}
           pintsLeft={keg.pintsLeft}
           onDecreasePints={props.onDecreasePints}
+          currentRouterPath={props.currentRouterPath}
           id={keg.id}
           key={keg.id}/>
       </div>
@@ -26,6 +27,7 @@ function Kegs(props) {
 
 Kegs.propTypes = {
   allKegs: PropTypes.array,
+  currentRouterPath: PropTypes.string,
   onDecreasePints: PropTypes.func.isRequired
 }
 
