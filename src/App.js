@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterKegList: []
+      masterKegList: [],
     };
     this.handleNewKeg = this.handleNewKeg.bind(this);
     this.handleDecreasePints = this.handleDecreasePints.bind(this);
@@ -33,6 +33,7 @@ class App extends React.Component {
   }
 
   render() {
+    
     return (
       <div className='App'>
         <Header/>
