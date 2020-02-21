@@ -8,8 +8,8 @@ function Kegs(props) {
   return (
     <div>
     {props.allKegs.map((keg) =>
-      <div className="kegs">
-        <img className="ginger-img" src={ginger} alt="a piece of ginger"></img>
+      <div className='kegs'>
+        <img className='ginger-img' src={ginger} alt='a piece of ginger'></img>
         <Keg name={keg.name}
           brand={keg.brand}
           price={keg.price}

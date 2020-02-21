@@ -4,6 +4,7 @@ const error = {
   textShadow: 'none',
   color: 'darkred'
 }
+
 function Error404(){
   return (
     <div style={error}>

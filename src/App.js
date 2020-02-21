@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Kegs from './components/Kegs'
-import NewKeg from './components/NewKeg'
-import Header from './components/Header'
+import Kegs from './components/Kegs';
+import NewKeg from './components/NewKeg';
+import Header from './components/Header';
 import { Switch, Route } from 'react-router-dom';
 import Error404 from './components/Error404';
 import Admin from './components/Admin';
