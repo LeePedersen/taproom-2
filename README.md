@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Component Structure
 
-<img src="src/img/componentStructure.jpeg">
+<img src="src/img/componentStructure-2.jpeg">
 
 ## Setup/Installation instructions:
 * Click the `Clone or download` button and copy the link.
