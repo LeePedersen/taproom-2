@@ -3,11 +3,13 @@ import './App.css';
 import Kegs from './components/Kegs';
 import NewKeg from './components/NewKeg';
 import Header from './components/Header';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Error404 from './components/Error404';
 import Admin from './components/Admin';
 import Login from './components/user/Login';
 import Protected from './components/user/Protected';
+import UserHome from './components/user/UserHome';
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
 
 function onAuthRequired({history}) {
@@ -47,15 +49,19 @@ class App extends React.Component {
         <Header/>
         <h1>Taproom</h1>
         <Switch>
+          <Route exact path='/' render={(props)=><Kegs allKegs={this.state.masterKegList} onDecreasePints={this.handleDecreasePints} currentRouterPath={props.location.pathname} />} />
+          <Route path='/employees' render={(props)=><Admin onDecreasePints={this.handleDecreasePints} allKegs={this.state.masterKegList} currentRouterPath={props.location.pathname} />} />
+          <Route path='/newkeg' render={()=><NewKeg onNewKeg={this.handleNewKeg} />} />
+          <Route component={Error404} />
 
-          <Security issuer='https://dev-105215.okta.com/oauth2/default' clientId='0oa2gpicmN89OJazq4x6' redirectUri={window.location.origin + '/implicit/callback'} onAuthRequired={onAuthRequired} pkce={true} >
+          // <Router>
+          //   <Security issuer='https://dev-105215.okta.com/oauth2/default' clientId='0oa2gpicmN89OJazq4x6' redirectUri={window.location.origin + '/implicit/callback'} onAuthRequired={onAuthRequired} pkce={true} >
+          //     <Route path='/userhome' exact={true} component={UserHome} />
+          //     <Route path='/login' render={() => <Login baseUrl='https://dev-105215.okta.com/oauth2/default' />} />
+          //     <SecureRoute path='/protected' component={Protected} />
+          //   </Security>
+          // </Router>
 
-            <Route exact path='/' render={(props)=><Kegs allKegs={this.state.masterKegList} onDecreasePints={this.handleDecreasePints} currentRouterPath={props.location.pathname} />} />
-            <SecureRoute path='/protected' component={Protected} />
-            <Route path='/employees' render={(props)=><Admin onDecreasePints={this.handleDecreasePints} allKegs={this.state.masterKegList} currentRouterPath={props.location.pathname} />} />
-            <Route path='/newkeg' render={()=><NewKeg onNewKeg={this.handleNewKeg} />} />
-            <Route component={Error404} />
-          </Security>
         </Switch>
       </div>
     );
