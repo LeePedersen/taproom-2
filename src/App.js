@@ -47,7 +47,7 @@ class App extends React.Component {
         <h1>Taproom</h1>
         <Switch>
 
-          <Security issuer='https://${yourOktaDomain}/oauth2/default' clientId='{clientId}' redirectUri={window.location.origin + '/implicit/callback'} onAuthRequired={onAuthRequired} pkce={true} >
+          <Security issuer='https://dev-105215.okta.com/oauth2/default' clientId='0oa2gpicmN89OJazq4x6' redirectUri={window.location.origin + '/implicit/callback'} onAuthRequired={onAuthRequired} pkce={true} >
 
             <Route exact path='/' render={(props)=><Kegs allKegs={this.state.masterKegList} onDecreasePints={this.handleDecreasePints} currentRouterPath={props.location.pathname} />} />
             <Route path='/employees' render={(props)=><Admin onDecreasePints={this.handleDecreasePints} allKegs={this.state.masterKegList} currentRouterPath={props.location.pathname} />} />

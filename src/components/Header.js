@@ -14,7 +14,8 @@ class Header extends React.Component {
   }
 
   async checkAuthentication() {
-    const authenticated = await this.props.auth.isAuthenticated();
+
+    const authenticated = await props.auth.isAuthenticated();
     if (authenticated !== this.state.authenticated) {
       this.setState({ authenticated });
     }
